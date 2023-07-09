@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notification variance</title>
+    <style type="text/css">
+      p{
+      margin:10px 0;
+      padding:0;
+      }
+      table{
+      border-collapse:collapse;
+      }
+      h1,h2,h3,h4,h5,h6{
+      display:block;
+      margin:0;
+      padding:0;
+      }
+      img,a img{
+      border:0;
+      height:auto;
+      outline:none;
+      text-decoration:none;
+      }
+      body,#bodyTable,#bodyCell{
+      height:100%;
+      margin:0;
+      padding:0;
+      width:100%;
+      }
+      .mcnPreviewText{
+      display:none !important;
+      }
+      #outlook a{
+      padding:0;
+      }
+      img{
+      -ms-interpolation-mode:bicubic;
+      }
+      table{
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+      }
+      .ReadMsgBody{
+      width:100%;
+      }
+      .ExternalClass{
+      width:100%;
+      }
+      p,a,li,td,blockquote{
+      mso-line-height-rule:exactly;
+      }
+      a[href^=tel],a[href^=sms]{
+      color:inherit;
+      cursor:default;
+      text-decoration:none;
+      }
+      p,a,li,td,body,table,blockquote{
+      -ms-text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+      }
+      .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+      line-height:100%;
+      }
+      a[x-apple-data-detectors]{
+      color:inherit !important;
+      text-decoration:none !important;
+      font-size:inherit !important;
+      font-family:inherit !important;
+      font-weight:inherit !important;
+      line-height:inherit !important;
+      }
+      .templateContainer{
+      max-width:600px !important;
+      }
+      a.mcnButton{
+      display:block;
+      }
+      .mcnImage,.mcnRetinaImage{
+      vertical-align:bottom;
+      }
+      .mcnTextContent{
+      word-break:break-word;
+      }
+      .mcnTextContent img{
+      height:auto !important;
+      }
+      .mcnDividerBlock{
+      table-layout:fixed !important;
+      }
+      /*
+      @tab Page
+      @section Heading 1
+      @style heading 1
+      */
+      h1{
+      /*@editable*/color:#222222;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:40px;
+      /*@editable*/font-style:normal;
+      /*@editable*/font-weight:bold;
+      /*@editable*/line-height:150%;
+      /*@editable*/letter-spacing:normal;
+      /*@editable*/text-align:center;
+      }
+      /*
+      @tab Page
+      @section Heading 2
+      @style heading 2
+      */
+      h2{
+      /*@editable*/color:#222222;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:34px;
+      /*@editable*/font-style:normal;
+      /*@editable*/font-weight:bold;
+      /*@editable*/line-height:150%;
+      /*@editable*/letter-spacing:normal;
+      /*@editable*/text-align:left;
+      }
+      /*
+      @tab Page
+      @section Heading 3
+      @style heading 3
+      */
+      h3{
+      /*@editable*/color:#444444;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:22px;
+      /*@editable*/font-style:normal;
+      /*@editable*/font-weight:bold;
+      /*@editable*/line-height:150%;
+      /*@editable*/letter-spacing:normal;
+      /*@editable*/text-align:left;
+      }
+      /*
+      @tab Page
+      @section Heading 4
+      @style heading 4
+      */
+      h4{
+      /*@editable*/color:#949494;
+      /*@editable*/font-family:Georgia;
+      /*@editable*/font-size:20px;
+      /*@editable*/font-style:italic;
+      /*@editable*/font-weight:normal;
+      /*@editable*/line-height:125%;
+      /*@editable*/letter-spacing:normal;
+      /*@editable*/text-align:left;
+      }
+      /*
+      @tab Header
+      @section Header Container Style
+      */
+      #templateHeader{
+      /*@editable*/background-color:#ffffff;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:28px;
+      /*@editable*/padding-bottom:28px;
+      }
+      /*
+      @tab Header
+      @section Header Interior Style
+      */
+      .headerContainer{
+      /*@editable*/background-color:transparent;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:0;
+      /*@editable*/padding-bottom:0;
+      }
+      /*
+      @tab Header
+      @section Header Text
+      */
+      .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      /*@editable*/color:#757575;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:16px;
+      /*@editable*/line-height:150%;
+      /*@editable*/text-align:left;
+      }
+      /*
+      @tab Header
+      @section Header Link
+      */
+      .headerContainer .mcnTextContent a,.headerContainer .mcnTextContent p a{
+      /*@editable*/color:#007C89;
+      /*@editable*/font-weight:normal;
+      /*@editable*/text-decoration:underline;
+      }
+      /*
+      @tab Body
+      @section Body Container Style
+      */
+      #templateBody{
+      /*@editable*/background-color:#FFFFFF;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:1px;
+      /*@editable*/padding-bottom:1px;
+      }
+      /*
+      @tab Body
+      @section Body Interior Style
+      */
+      .bodyContainer{
+      /*@editable*/background-color:transparent;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:0;
+      /*@editable*/padding-bottom:0;
+      }
+      /*
+      @tab Body
+      @section Body Text
+      */
+      .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+      /*@editable*/color:#757575;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:16px;
+      /*@editable*/line-height:150%;
+      /*@editable*/text-align:left;
+      }
+      /*
+      @tab Body
+      @section Body Link
+      */
+      .bodyContainer .mcnTextContent a,.bodyContainer .mcnTextContent p a{
+      /*@editable*/color:#007C89;
+      /*@editable*/font-weight:normal;
+      /*@editable*/text-decoration:underline;
+      }
+      /*
+      @tab Footer
+      @section Footer Style
+      */
+      #templateFooter{
+      /*@editable*/background-color:#transparent;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:0px;
+      /*@editable*/padding-bottom:0px;
+      }
+      /*
+      @tab Footer
+      @section Footer Interior Style
+      */
+      .footerContainer{
+      /*@editable*/background-color:transparent;
+      /*@editable*/background-image:none;
+      /*@editable*/background-repeat:no-repeat;
+      /*@editable*/background-position:center;
+      /*@editable*/background-size:cover;
+      /*@editable*/border-top:0;
+      /*@editable*/border-bottom:0;
+      /*@editable*/padding-top:0;
+      /*@editable*/padding-bottom:0;
+      }
+      /*
+      @tab Footer
+      @section Footer Text
+      */
+      .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+      /*@editable*/color:#FFFFFF;
+      /*@editable*/font-family:Helvetica;
+      /*@editable*/font-size:12px;
+      /*@editable*/line-height:150%;
+      /*@editable*/text-align:center;
+      }
+      /*
+      @tab Footer
+      @section Footer Link
+      */
+      .footerContainer .mcnTextContent a,.footerContainer .mcnTextContent p a{
+      /*@editable*/color:#FFFFFF;
+      /*@editable*/font-weight:normal;
+      /*@editable*/text-decoration:underline;
+      }
+      @media only screen and (min-width:768px){
+      .templateContainer{
+      width:600px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      body,table,td,p,a,li,blockquote{
+      -webkit-text-size-adjust:none !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      body{
+      width:100% !important;
+      min-width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnRetinaImage{
+      max-width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImage{
+      width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
+      max-width:100% !important;
+      width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnBoxedTextContentContainer{
+      min-width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageGroupContent{
+      padding:9px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+      padding-top:9px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
+      padding-top:18px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageCardBottomImageContent{
+      padding-bottom:9px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageGroupBlockInner{
+      padding-top:0 !important;
+      padding-bottom:0 !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageGroupBlockOuter{
+      padding-top:9px !important;
+      padding-bottom:9px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnTextContent,.mcnBoxedTextContentColumn{
+      padding-right:18px !important;
+      padding-left:18px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+      padding-right:18px !important;
+      padding-bottom:0 !important;
+      padding-left:18px !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      .mcpreview-image-uploader{
+      display:none !important;
+      width:100% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 1
+      @tip Make the first-level headings larger in size for better readability on small screens.
+      */
+      h1{
+      /*@editable*/font-size:30px !important;
+      /*@editable*/line-height:125% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 2
+      @tip Make the second-level headings larger in size for better readability on small screens.
+      */
+      h2{
+      /*@editable*/font-size:26px !important;
+      /*@editable*/line-height:125% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 3
+      @tip Make the third-level headings larger in size for better readability on small screens.
+      */
+      h3{
+      /*@editable*/font-size:20px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Heading 4
+      @tip Make the fourth-level headings larger in size for better readability on small screens.
+      */
+      h4{
+      /*@editable*/font-size:18px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Boxed Text
+      @tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+      */
+      .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+      /*@editable*/font-size:14px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Header Text
+      @tip Make the header text larger in size for better readability on small screens.
+      */
+      .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      /*@editable*/font-size:16px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Body Text
+      @tip Make the body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+      */
+      .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+      /*@editable*/font-size:16px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }	@media only screen and (max-width: 480px){
+      /*
+      @tab Mobile Styles
+      @section Footer Text
+      @tip Make the footer content text larger in size for better readability on small screens.
+      */
+      .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+      /*@editable*/font-size:14px !important;
+      /*@editable*/line-height:150% !important;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    
+<center><div class="R1UVb" style="height: 815px; width: 100%;" has-hovered="true"><div class="qF8_5"></div><table align="center" border="0" cellspacing="0" cellpadding="0" id="x_x_bodyTable" style="width: 100%; height: 100%; border-collapse: collapse; margin: 0px; padding: 0px; transform: scale(0.886957, 0.886957); transform-origin: left top;" min-scale="0.8869565217391304">
+    <tbody><tr>
+    <td align="center" valign="top" id="x_x_bodyCell" style="width:100%;height:100%;margin:0;padding:0;"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+    <tbody><tr>
+    <td align="center" valign="top" id="x_x_templateHeader" style="background-color:white;padding-top:28px;padding-bottom:28px;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:600px;">
+    <tbody><tr>
+    <td valign="top" style="background-color:transparent;padding-top:0;padding-bottom:0;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding:9px;"><table align="left" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="text-align:center;padding:0 9px;"><img data-imagetype="DataUri" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAAA7CAYAAAAU7jSGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA25pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2NmMzMGFlOS0yODhhLTIwNDktODIzOS0xYzA3NjhhMDVhZTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MEIwREVEQTgwNDJCMTFFOUIxRDg4NkM5OEM3MTJENEEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MEIwREVEQTcwNDJCMTFFOUIxRDg4NkM5OEM3MTJENEEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MjExNENDODFGRkRFODExQjhEOURGRUY1RjE0OEZENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NmMzMGFlOS0yODhhLTIwNDktODIzOS0xYzA3NjhhMDVhZTQiLz4gPC9yZGY6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" width="222" style="vertical-align:bottom;text-decoration:none;max-width:222px;padding-bottom:0;border-width:0;outline:none;"></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding-top:9px;"><table align="left" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:100%;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="color:#009FC7;padding:0 18px 9px 18px;">
+    <h1 style="color:#222222;font-size:40px;font-family:Helvetica;font-weight:bold;font-style:normal;text-align:center;display:block;margin:0;padding:0;line-height:150%;letter-spacing:normal;"><span style="color:navy;"><u><span style="font-size:24px;"><strong style="text-transform:capitalize;">Your day Cloud Resources Utilization Alerts!</strong></span></u></span></h1></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+    <tr>
+    <td align="center" valign="top" id="x_x_templateBody" style="background-color:white;padding-top:1px;padding-bottom:1px;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:600px;">
+    <tbody><tr>
+    <td valign="top" style="background-color:transparent;padding-top:0;padding-bottom:0;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding-top:9px;"><table align="left" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:100%;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding:0 18px 9px 18px;">
+    <h2 style="color:#222222;font-size:34px;font-family:Helvetica;font-weight:bold;font-style:normal;text-align:left;display:block;margin:0;padding:0;line-height:150%;letter-spacing:normal;"><strong><span style="color:teal;"><span style="font-size:20px;"><span style="font-family:Arial,helvetica neue,Helvetica,sans-serif;text-transform:capitalize;">Your Consumption Since Last day</span></span></span></strong></h2>
+    <div style="text-align:left;width:100%;height:100%;margin:0;padding:0;"><br aria-hidden="true">
+    <span style="color:navy;"><font face="roboto,helvetica neue,Helvetica,Arial,sans-serif"><strong>Advanced Threat Protection</strong></font></span><font color="black" face="roboto,helvetica neue,Helvetica,Arial,sans-serif">5.785688670196716</font></div></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td style="padding:18px;min-width:100%;"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td><span></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+    <tr>
+    <td align="center" valign="top" id="x_x_templateFooter" style="padding-top:0;padding-bottom:0;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:600px;">
+    <tbody><tr>
+    <td valign="top" style="background-color:transparent;padding-top:0;padding-bottom:0;border-top-width:0;border-bottom-width:0;background-image:none;background-repeat:no-repeat;background-position:center;background-size:cover;"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding-top:9px;"><table align="left" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:100%;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding:0 18px 9px 18px;"><span style="color:black;">For any queries, write to us at </span><a href="http://cloudcadi-support@amadisglobal.com" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" id="LPlnk978570" data-linkindex="0"><span style="color:teal;">cloudcadi-support@amadisglobal.com</span></a><div id="LPBorder_GTaHR0cDovL2Nsb3VkY2FkaS1zdXBwb3J0QGFtYWRpc2dsb2JhbC5jb20v" class="LPBorder758521" style="width: 100%; margin-top: 16px; margin-bottom: 16px; position: relative; max-width: 800px; min-width: 424px;"><table id="LPContainer758521" role="presentation" style="padding: 12px; width: 100%; border-width: 1px; border-style: solid; border-color: rgb(200, 200, 200); border-radius: 2px;"><tr valign="top" style="border-spacing: 0px;"><td><div id="LPImageContainer758521" style="position: relative; margin-right: 12px; height: 149.446px; overflow: hidden; width: 240px;"><a target="_blank" id="LPImageAnchor758521" href="http://cloudcadi-support@amadisglobal.com/"><img id="LPThumbnailImageId758521" alt="" src="https://amadisglobal.com/wp-content/uploads/2022/09/white2.png" height="149" style="display: block;" width="240"></a></div></td><td style="width: 100%;"><div id="LPTitle758521" style="font-size: 21px; font-weight: 300; margin-right: 8px; font-family: wf_segoe-ui_light, &quot;Segoe UI Light&quot;, &quot;Segoe WP Light&quot;, &quot;Segoe UI&quot;, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif; margin-bottom: 12px;"><a target="_blank" id="LPUrlAnchor758521" href="http://cloudcadi-support@amadisglobal.com/" style="text-decoration: none; color: var(--themePrimary);">Amadis - Navigate Cloud Native Innovation With Us.</a></div><div id="LPDescription758521" style="font-size: 14px; max-height: 100px; color: rgb(102, 102, 102); font-family: wf_segoe-ui_normal, &quot;Segoe UI&quot;, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif; margin-bottom: 12px; margin-right: 8px; overflow: hidden;">Embrace the cloud with our tailored cloud optimization solutions to hit your business goals at the right pace. Optimize your cloud than ever before.</div><div id="LPMetadata758521" style="font-size: 14px; font-weight: 400; color: rgb(166, 166, 166); font-family: wf_segoe-ui_normal, &quot;Segoe UI&quot;, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;">amadisglobal.com</div></td></tr></table></div></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding-top:9px;"><table align="left" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;max-width:100%;min-width:100%;">
+    <tbody><tr>
+    <td valign="top" style="padding:0 18px 9px 18px;"><span style="color:black;">Want to change how you receive these emails?</span><br aria-hidden="true">
+    <span style="color:black;">You can </span>[*|UPDATE_PROFILE|*]<span style="color:teal;"><u>update your preference </u>s</span><span style="color:black;">or </span>[*|UNSUB|*]<span style="color:teal;">unsubscribe from this list</span><span style="color:teal;">.</span><br aria-hidden="true">
+    </td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></div></center></div>
+    <script type="text/javascript" src="/WTO8fCU8g/_F_KGV/pkYCo/BnzsxN8/iV5QDzfDiN/JSlObhhbAQ/FWda/JT1QMXw"></script>
+  </body>
+</html>
